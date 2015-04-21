@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2011-2012 SRA International, Inc., All Rights Reserved. -->
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" android:oneshot="false">
+<item android:drawable="@drawable/droid01" android:duration="33"/>
+<item android:drawable="@drawable/droid02" android:duration="33"/>
+<item android:drawable="@drawable/droid03" android:duration="33"/>
+<item android:drawable="@drawable/droid04" android:duration="33"/>
+<item android:drawable="@drawable/droid05" android:duration="33"/>
+<item android:drawable="@drawable/droid06" android:duration="33"/>
+<item android:drawable="@drawable/droid07" android:duration="33"/>
+<item android:drawable="@drawable/droid08" android:duration="33"/>
+<item android:drawable="@drawable/droid09" android:duration="33"/>
+<item android:drawable="@drawable/droid10" android:duration="33"/>
+<item android:drawable="@drawable/droid11" android:duration="33"/>
+<item android:drawable="@drawable/droid12" android:duration="33"/>
+<item android:drawable="@drawable/droid13" android:duration="33"/>
+<item android:drawable="@drawable/droid14" android:duration="33"/>
+<item android:drawable="@drawable/droid15" android:duration="33"/>
+<item android:drawable="@drawable/droid16" android:duration="33"/>
+<item android:drawable="@drawable/droid17" android:duration="33"/>
+<item android:drawable="@drawable/droid18" android:duration="33"/>
+<item android:drawable="@drawable/droid19" android:duration="33"/>
+<item android:drawable="@drawable/droid20" android:duration="33"/>
+<item android:drawable="@drawable/droid21" android:duration="33"/>
+<item android:drawable="@drawable/droid22" android:duration="33"/>
+<item android:drawable="@drawable/droid23" android:duration="33"/>
+<item android:drawable="@drawable/droid24" android:duration="33"/>
+<item android:drawable="@drawable/droid25" android:duration="33"/>
+<item android:drawable="@drawable/droid26" android:duration="33"/>
+<item android:drawable="@drawable/droid27" android:duration="33"/>
+<item android:drawable="@drawable/droid28" android:duration="33"/>
+<item android:drawable="@drawable/droid29" android:duration="33"/>
+<item android:drawable="@drawable/droid30" android:duration="33"/>
+</animation-list>
+

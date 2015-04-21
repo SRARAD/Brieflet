@@ -1,0 +1,170 @@
+<!-- Copyright (c) 2011-2012 SRA International, Inc., All Rights Reserved. -->
+<html>
+<body>
+<h2>The Single Slide View</h2>
+<p>This is the view used during presentations.  It shows a single slide on the full screen.  It also offers
+ many slide editing and display options.</p>
+<h2>Presentation Operations</h2>
+<p>This section focuses on operations that would usually be performed while giving a presentation.</p>
+<h3>Navigating Between Slides</h3>
+<p>There are three basic control areas on a slide.  Tapping near the top of a slide moves to the slide grid view.  Tapping
+ on the right side of a slide (but not near the very top) moves to the next slide.  Tapping on the left side of a slide
+ (but not near the very top) moves to the previous slide.  The slide viewer also recognizes the "fling" gesture.  Swipe
+ your finger quickly from right to left to move to the next slide and swipe from left to right to move to the previous slide.</p>
+<h3>Activating Actions</h3>
+<p>If you tap in a rectangular area designated for an Action, that Action takes precedence over slide navigation.  In order
+ to ensure that large or full screen action areas don't prevent slide to slide navigation, a 50 pixel border area on the
+ left, top, and right side of a slide is always reserved for navigation.  Be aware that the portions of Actions placed
+ in those areas will not respond to touch events.</p>
+<p>In order to make it clear where Action areas exist on slides, you may choose to have those areas highlighted.  There is
+ a Brieflet application setting in the Preferences area but this can also be toggled locally from the Slide View.  On the long
+ press Options Menu for the Slide View you will find a "Show Actions" option which will turn on the mode that highlights
+ Action areas with blue rectangular borders.  You can also toggle this off again with the "Hide Actions" option.  This
+ is a temporary setting which only stays as long as you're in that presentation.  If you want to change it in general,
+ use Brieflet preferences.</p>
+<p>Actions all launch different activities on your device.  You can return to the briefing by hitting the Back key.
+ In the event the Action cannot be run on your device (e.g. missing presentation, video, or application) you will get
+ a dialog telling you so.  The thumbnails for some Actions may not appear if their target is not on your device (for
+ a video or application, for instance) but the boundary will still appear if highlighted.  If the Action designates 
+ launch of an application you don't have installed, Brieflet gives you the option of looking for it in the Market.</p>
+<h3>Transitions</h3>
+<p>Slide-to-slide transitions have an application wide default setting in Preferences.  They can also be set at the presentation
+ and individual slide level.  Generally, the transitions for next and previous slide will be the reverse of each other.</p>
+<h3>Drawing Mode</h3>
+<p>Brieflet allows you to draw on the slides during the presentation.  The default thickness and color of the line
+ are set in the Brieflet preferences.  To enter drawing mode, double-tap the slide.  A brief confirmation that you're
+ in drawing mode will appear.  At this point you can draw any number of shapes with your finger (or mouse) on the
+ slide.  You can also change the color of the line at any time by long-pressing the slide when in drawing mode.  This
+ will display an Option menu with a Choose Color option.  Click that option to see a color picker.  Touch around
+ the edge of the circle to set the color (shown in the middle circle) and then tap the middle circle to confirm
+ your choice of color.  Drawing may then proceed in the selected color.  Once you leave the presentation, the color will
+ revert to the Brieflet default settings from preferences.</p>
+<p>To clear the drawing, either single or double-tap the screen to leave drawing mode.  Also, any Action or slide navigation
+ operation that moves to a new slide or the grid will clear the drawing and leave drawing mode.</p>
+<h2>Editing Operations</h2>
+<p>The majority of Brieflet's editing operations center on Actions placed on the slides.  All Action editing takes place
+ on the Slide View.  There are two types of long press options menus you may see on the Slide View depending on where
+ you touch.  If you touch within an Action's rectangular area, you will get an Action Options Menu.  If you long press
+ elsewhere on the slide, you will get the Slide Options Menu.  We'll cover both of these menus below.</p>
+<h3>The Slide Options Menu</h3>
+<p>This menu appears by long pressing a non-Action area of a Slide.  The options are described below.</p>
+<h3>Hide Slide</h3>
+<p>This option "hides" a slide so it will be skipped in the Presentation.  This will cause the slide to appear
+ darkened in the grid view to indicate it has been hidden.  You can always view a hidden slide full screen by
+ going to the grid view and tapping on it.  But it will be skipped when going either forward or backward through
+ the slides when in the full-screen slide view.  The slide will be marked as hidden in the presentation itself
+ and this will persist until changed.</p>
+<h3>Show Slide</h3>
+<p>If a slide is hidden this will make it visible in the presentation mode again.</p>
+<h3>Show Actions</h3>
+<p>This will turn on the display of blue rectangles around Actions on the slides in the presentation.  This setting
+ persists until one leaves the current presentation.  To set this permanently, use Brieflet preferences.</p>
+<h3>Hide Actions</h3>
+<p>This will turn off the display of blue rectangles around Actions on the slide in the presentation.  This settings
+ persists until one leaves the current presentation.  To set this permanently, use Brieflet preferences.</p>
+<h3>Cut Slide</h3>
+<p>This removes the slide from the presentation and puts it on the clipboard so that it may later be pasted
+ somewhere else in the same or a different presentation.</p>
+<h3>Copy Slide</h3>
+<p>This makes a copy of the slide on the clipboard so that it may later be pasted somehwere else in one of the
+ presentations.</p>
+<h3>Paste Before</h3>
+<p>This option will appear if you have a slide on the clipboard.  It will paste a copy of the slide before the
+ currently displayed slide.</p>
+<h3>Paste After</h3>
+<p>This option will appear if you have a slide on the clipboard.  It will paste a copy of the slide after the
+ currently displayed slide.</p>
+<h3>Delete Slide</h3>
+<p>This permanently deletes the slide from this presentation.  A dialog will ask you to confirm the deletion.</p>
+<h3>Set Slide As Template</h3>
+<p>This sets the slide as a background template that will be used when automatically creating slides from videos and photos
+ sent to Brieflet.  The background is only used when the Brieflet preference for backgrounds is set to "Custom".</p>
+<h3>Set Slide Transition</h3>
+<p>This option appears for all slides except the first to indicate the transition that should occur immediately before the
+ slide.  If the "Use Default" option is selected on the dialog, the transition reverts to either the
+ presentation default if set or the application default.</p>
+<h3>Copy As Slide Link Action</h3>
+<p>This copies a link to the slide (a type of Brieflet Action) onto the clipboard so that it may later be pasted in another slide.  When a
+ slide link is pasted it will include a thumbnail of the slide you are linking to.  You can also choose to hide the thumbnail after
+ you've pasted the link.  This provides a mechanism for linking presentations together.  After following a slide link you can always
+ return to the original presentation with the Back key.</p>
+<h3>Create Action</h3>
+<p>This operation lets a user create a new Action for the slide.  You can also create Actions by sending them to Brieflet
+ through Share operations from other applications like the Browser or the Gallery.  Upon tapping the Create Action
+ menu item, an Action dialog will appear asking which kind of Action you'd like to create.  Current options include:</p>
+<ul>
+<li>Browser</li>
+<li>Google Maps</li>
+<li>Streets</li>
+<li>Navigation</li>
+<li>Launch Any Application</li>
+<li>Play Song</li>
+</ul>
+<p>For the first four options you will be prompted for a URI.  A sample URI may appear for you to edit.</p>
+<p>If choosing to launch an application, you will be asked to select one from a dialog showing all applications on your device.</p>
+<p>If choosing to play a song, you will be asked to choose one from those found in the media store on your device.</p>
+<p>Note: if you plan to share your slides with Brieflet users on different devices launch Actions may or may not be portable.  Many
+ of the standard system applications have the same package and class names.  But even some of the standard system applications like
+ Gallery and Camera may differ from platform to platform.  For instance, Gallery and Camera have different package and class names
+ between the Motorola Xoom and the Samsung Galaxy Tab 10.1.  If applications are available from the market, users receiving the
+ slides can click on the launch Action (icon may be hidden) to retrieve the application from the market.  We may introduce more
+ flexible logic to find applications by name in upcoming versions which should aid in portability as more tablets are introduced.</p>
+<p>Once you've finished selecting the type of Action (you can edit this later as described below if you want to make
+ corrections), you will be asked to place the rectangular bounding area for the Action on the screen.</p>
+<h4>Editing Action Bounding Rectangles</h4>
+<p>You should see a red rectangle on your screen with a set of 9 handles on the corners, sides, and center of the
+ rectangle.  You can move the rectangle around the screen without resizing by placing your finger at the center of
+ the rectangle and dragging it around the screen.  To size the rectangle, place your finger near one of the other
+ handles and drag with your finger.  To avoid actions getting too small so they can't be selected, the rectangle can't be
+ sized smaller than a certain limit.</p>
+<p>If the rectangle has a thumbnail associated with it, the thumbnail will be resized with the rectangle.  Some thumbnails, like
+ those for applications, are small and may distort if the rectangle is sized too large.  If you don't want the thumbnail, finish
+ your rectangular placement first (by double-tapping) and then long press the action to choose Hide Thumbnail.</p>
+<p>Double tapping anywhere on the screen exits Action rectangle edit mode.</p>
+<h3>Paste Action</h3>
+<p>This option appears if you have one or more Actions currently on the clipboard.  This pastes the Actions onto the current slide.
+ If you are pasting multiple Actions, they will be rearranged and resized to form a grid in the middle of the slide.
+ After the paste is complete, the actions will be automatically saved to the slide. From there you may select each one
+ individually to resize and edit.</p>
+<p>Pasting one action, on the other hand, will take you into Action Rectangle Edit mode described above where you can place and size the rectangle.
+ Double-tap to complete the paste.  Be aware that the Action is initially placed at the same coordinates it had on the slide it was copied
+ from.  So if you're using this to duplicate an Action, it may be directly on top of the previous Action until it is moved
+ in the edit operation.</p>
+<h2>The Action Options Menu</h2>
+<p>This menu appears by long pressing an Action area on the Slide.  The options are described below.</p>
+<h3>Hide Thumbnail</h3>
+<p>Some Actions may have a graphical thumbnail associated with them.  For instance, a web page reference might have a thumbnail
+ of the web page, a video could have a sample frame, and an application launch action could have an application icon.  Sometimes
+ you might want to use those icons to designate the action.  Other times you might just want to wrap the action around some
+ element that's already part of your slide.  In the latter case, you'll want to hide the thumbnail using this option.</p>
+<h3>Show Thumbnail</h3>
+<p>Makes the thumbnail for an Action visible again (if available).</p>
+<h3>Loop Media</h3>
+<p>This is displayed for audio/video actions only.  If chosen it will cause the media clip to loop rather than to
+ end at the end of the clip.</p>
+<h3>Play Once</h3>
+<p>This is displayed for audio/video actions which are set to loop.  If chosen, it will cause the media to play
+ only once instead.</p>
+<h3>Auto Start</h3>
+<p>This is displayed for audio/video actions only.  If chosen, it will cause media playback to start automatically when the slide
+ is displayed.  Auto-play will only be triggered for the first audio and video action on the slide with auto-play set to on (because
+ we don't currently play more than one video or more than one audio clip simultaneously).</p>
+<h3>Start on Click</h3>
+<p>This is displayed for audio/video actions which are set to auto start.  If chosen, it will cause the media to only start playing
+ if touched.</p>
+<h3>Edit Action</h3>
+<p>This operation takes you into Edit Mode on an Action.  The boundary of the action will turn red and be displayed with
+ the edit handles as described in Action Rectangle Edit mode above.  Additionally, you may edit the associated URI by
+ long pressing anywhere on the screen.  To complete the operation, double-tap the screen.</p>
+<h3>Cut Action</h3>
+<p>This operation removes an Action from the slide, placing it on the clipboard so it can be pasted elsewhere.  You'll
+ be prompted by a dialog to confirm.</p>
+<h3>Copy Action</h3>
+<p>This operation copies an Action to the clipboard so that it may be pasted elsewhere.</p>
+<h3>Delete Action</h3>
+<p>This operation deletes an Action from the slide.  You'll be prompted by a dialog to confirm the delete.</p>
+<h3>View Action</h3>
+<p>This gives some technical detail about what the Action will do.  It includes a full string representation of all parameters
+ of the Action.  For instance, for intents you'll see the intent action and URI.</p>
+</body>
+</html>

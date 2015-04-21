@@ -1,0 +1,21 @@
+<!-- Copyright (c) 2011-2012 SRA International, Inc., All Rights Reserved. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/layout_root"
+              android:orientation="horizontal"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:padding="10dp"
+              >
+    <ImageView android:id="@+id/app_image"
+               android:layout_width="48px"
+               android:layout_height="48px"
+               android:layout_marginRight="10dp"
+               android:scaleType="centerCrop"
+               />
+    <TextView android:id="@+id/app_text"
+              android:layout_width="wrap_content"
+              android:layout_height="fill_parent"
+              android:gravity="center_vertical"
+              android:textColor="#FFF"
+              />
+</LinearLayout>

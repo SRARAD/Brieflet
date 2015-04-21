@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2011-2012 SRA International, Inc., All Rights Reserved. -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">    
+    <item android:id="@+id/grid_menu_hide"
+          android:title="Hide"
+          android:icon="@drawable/ic_menu_view"
+          android:showAsAction="withText|always" />
+          
+    <item android:id="@+id/grid_menu_cut"
+          android:title="Cut"
+          android:icon="@drawable/ic_menu_cut_holo_dark"
+          android:showAsAction="withText|always" />
+   
+    <item android:id="@+id/grid_menu_copy"
+          android:title="Copy"
+          android:icon="@drawable/ic_menu_copy_dark"
+          android:showAsAction="withText|always" />
+    
+    <item android:id="@+id/grid_menu_paste"
+    	  android:title="Paste"
+    	  android:icon="@drawable/ic_menu_paste_dark"
+    	  android:showAsAction="withText|always">
+    	  <menu>
+			<item android:id="@+id/grid_menu_paste_before"
+          	android:title="Paste Before" />
+          	
+          	<item android:id="@+id/grid_menu_paste_after"
+         	android:title="Paste After"/>  
+		</menu>
+    </item>          
+          
+    <item android:id="@+id/grid_menu_delete"
+          android:icon="@drawable/ic_menu_delete"
+          android:title="Delete"
+          android:showAsAction="withText|always" />
+    
+    <item android:title="Show Transitions" android:id="@+id/grid_menu_show_transition" />
+          
+    <item android:id="@+id/grid_menu_transition"
+          android:title="Set Transition" />
+          
+    <item android:id="@+id/grid_menu_link"
+          android:title="Copy Slide Link" />
+          
+    <item android:id="@+id/grid_menu_template"
+          android:title="Save Template" />
+</menu>

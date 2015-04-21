@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Tue Mar 22 13:09:08 EDT 2011
+onejar.license.required=false
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=true
+jarname=c\:\\ppt2xoom.jar
+manifest.mergeall=true
+manifest.mainclass=com.sra.pptc.PPTConvert
+manifest.file=<createnew>
+jarname.isextern=true
+onejar.expand=
+excludes=
+includes=<inc|PPTConvert/lib>~jawin.dll

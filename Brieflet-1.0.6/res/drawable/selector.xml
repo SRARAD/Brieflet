@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2011-2012 SRA International, Inc., All Rights Reserved. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">:
+    <item android:state_activated="true" android:drawable="@color/android_green" />:
+    <item android:state_pressed="true" android:drawable="@color/android_green" />:
+    <item android:drawable="@android:color/transparent" />:  
+</selector>

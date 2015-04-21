@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2011-2012 SRA International, Inc., All Rights Reserved. -->
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+        <ListPreference android:entries="@array/TransitionNames" android:entryValues="@array/TransitionValues" android:key="defaultTransition" android:title="Set Default Slide Transition" android:dialogTitle="Default Slide Transition" android:defaultValue="flip"></ListPreference>
+        <ListPreference android:entries="@array/ThumbnailSizeNames" android:title="Set Slide Thumbnail Size" android:dialogTitle="Slide Thumbnail Size" android:entryValues="@array/ThumbnailSizeValues" android:key="thumbnailSize" android:defaultValue="small"></ListPreference>
+        
+        <ListPreference android:title="Set Default Drawing Color" android:dialogTitle="Set Default Color" android:key="defaultColor" android:entryValues="@array/SimpleColorNames" android:entries="@array/SimpleColorNames" android:defaultValue="Green"></ListPreference>
+ <ListPreference android:entries="@array/StrokeWidthNames" android:title="Set Default Drawing Stroke Width" android:dialogTitle="Set Default Stroke Width" android:entryValues="@array/StrokeWidthValues" android:key="defaultStrokeWidth" android:defaultValue="5"></ListPreference>
+        <ListPreference android:title="Set Default Embedded Video Size" android:dialogTitle="Set Default Embedded Video Size" android:key="defaultVideoSize" android:entryValues="@array/VideoSizes" android:entries="@array/VideoSizes" android:defaultValue="640x480"></ListPreference>
+        <ListPreference android:title="Set Default Template Background" android:dialogTitle="Set Default Template Background" android:key="defaultSlideBackground" android:entryValues="@array/SlideBackground" android:entries="@array/SlideBackground" android:defaultValue="Black"></ListPreference>
+<CheckBoxPreference android:key="showActions" android:defaultValue="false" android:title="Show Actions By Default"></CheckBoxPreference>
+<CheckBoxPreference android:key="droidEffects" android:defaultValue="false" android:title="Show Robot Effects"></CheckBoxPreference>
+</PreferenceScreen>

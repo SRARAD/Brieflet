@@ -1,0 +1,91 @@
+<!-- Copyright (c) 2011-2012 SRA International, Inc., All Rights Reserved. -->
+<html>
+<body>
+<h2>Converting Slides to Brieflet Format</h2>
+<p>If you use PowerPoint on Windows, you can use the included conversion tool described below.  If you
+ use another platform (like the Mac) you can perform the export from PowerPoint yourself as described below.</p>
+<h3>Brieflet's Windows PowerPoint Converter</h3>
+<p>Brieflet includes a slide conversion tool for Windows PowerPoint users. The tool runs on a Windows
+ computer with PowerPoint installed.  It allows you to choose a presentation for conversion and
+ can produce a compressed version of the presentation for use by Brieflet and can automatically
+ copy the presentation to your device.  The software also can rescale the slides inside PowerPoint
+ to exactly match your tablet's screen size.</p>
+<p>Brieflet's Java-based slide conversion tool for Windows is included in the Brieflet mobile application and
+ can be obtained in a couple of ways.
+ Using the Option Menu in the application, choose the "Get Windows PowerPoint Converter" sub-menu.
+ You have a choice of having the application send a copy of the converter to you or having it
+ export the converter to Slides/pptconvert.jar on your SDCard.
+<p>If you choose send, you can choose an email application or an application like Dropbox.
+ In the case of email, the email will be filled in with a subject line and
+ a body containing installation instructions.  It will include an attachment called pptconvert.jar which
+ is an executable Java archive.  You can save pptconvert.jar to your Windows PC.  If you have an application
+ like Dropbox set up, it's even easier.  Just send the converter to Dropbox and choose a folder that's being
+ synced with your Windows PC.  The file will then automatically appear in that folder on your Windows PC.
+ If you have a recent
+ version of Java installed
+ you should be able to double-click the pptconvert.jar file to launch the converter.  No install is required,
+ the jar file itself is the converter.  Although
+ written in Java, the conversion application needs to use native code to call PowerPoint and to
+ transfer files to tablets like the Xoom which use the Windows-based Media Transfer Protocol.
+ So the converter is only for Windows at this time.</p>
+<p>If you choose to export the pptconvert.jar file to your SDCard you can then copy it from
+ Slides/pptconvert.jar to your Windows PC (on the Xoom this would be from inside the Xoom
+ folder that appears under Computer when you have it connected via USB).</p>
+<p>We recommend you copy the pptconvert.jar to the hard drive on your PC but it actually can
+ be directly executed from the Slides folder across the USB link to the tablet.</p>
+<h4>Troubleshooting Tips</h4>
+<h5>USB Debugging</h5>
+<p>If you find transfers to the Xoom are slow or hang using Media Transfer Protocol (MTP) you
+ may want to disable USB debugging if you have it on during the transfers.</p>
+<h5>Slow PowerPoint Conversion</h5>
+<p>Because pptconvert.jar writes the compressed Brieflet file to the same directory where your
+ PowerPoint source file is, conversion is faster if you have your PowerPoint files on the local disk rather than a network
+ drive.</p>
+ <h5>64-bit Windows OS</h5>
+ <p>Currently pptconvert.jar uses 32-bit native libraries so it will have to be run from a
+ 32-bit version of Java when run under a 64-bit version of Windows.</p>
+<h3>Manually Creating a Brieflet Format File from PowerPoint</h3>
+<p>Brieflet (.blt) files are zip files containing the images of your slides.  To save these out manually from PowerPoint
+ use the Save As option and save your slides to a folder as PNG images.  The folder should then contain a series of images
+ named Slide1.PNG, Slide2.PNG, and so forth on the PC or Slide01.png, Slide02.png on the MAC.   If you want to
+ include a title, you may just include a "title.txt" file along with the images with your presentation title on the first (and only)line in the file.  If you
+ don't provide a title, it will default to the zip file name.  Then just Zip the directory and rename it with a "blt" extension instead of "zip" and
+ either use email to send it to your device or copy the file to the Slides folder on the device.  While Brieflet will search
+ the received archive for files of the SlideNNN pattern (it excludes images beginning with "." that some platforms like Mac
+ create as thumbnails), it is more efficient if you can just include the images directly without a full directory path name.</p>
+<p>If Brieflet fails to find images in the prescribed SlideNNN format, it will just create a presentation order from the
+ images found in the zip file (excluding file starting with ".") in the order they appear in the zip file.  You can, of course,
+ re-order the slides when you edit on the device.</p>
+<p>If you want to improve the layout in PowerPoint to match the dimensions of the tablet screen, you can do that with
+ Page Setup.  This will effect both the resolution aspect ratio of the resulting exported images.  When receiving presentations
+ by email that do not match the tablet resolution, brieflet gives the user the option of stretching the images to fit the tablet screen or of adding sidebars.</p>
+ <p>Once Brieflet has performed some edits of the presentation on your tablet, it will add a meta.txt file to the
+ zip file containing your presentation which includes slide ordering information, hidden slide information, actions
+ and so forth.  But it will infer slide order from the file names if this additional information is not initially
+ provided.  For more information on how to produce the file format from other applications see our <a href="blt://developer.html">developer documentation</a>.</p>
+ <h3>Importing Brieflet Presentations Using Zamzar&trade; Cloud-based File Conversions</h3>
+ <p><a href="http://zamzar.com">Zamzar&trade;</a> is a popular cloud-based file conversion service.  Smaller-sized file conversions
+ are free (presentation-sized files generally are under the limit).  For instance, if you want to convert a PDF containing slides,
+ either upload the PDF or point to the URL that has the file.  Choose a Brieflet supported image output format (JPG recommended).  Then
+ specify an email address (accessible from your tablet) to send yourself a notification of the completed file conversion.  When you
+ receive the email on your tablet, navigate to the web link with your results.  You'll see a list of the individual files for your
+ documents.  The list may include a zip file with all the images or a list of individual images for each slide.  Now just use the Share option in the browser to share the page with Brieflet -- Brieflet will automatically build
+ your presentation from the converted images (you can also share the body of the received email directly with Brieflet in other
+ email readers like K9).  Brieflet will download and convert the zip file if present.  For some image output formats Zamzar
+ may not furnish a zip.  In this case, Brieflet downloads individual images and assembles them into a presentation.  Zamzar is capable
+ of converting a wide-variety of formats and producing a number of different image formats.  We've primarily tested conversion of slide
+ presentations in PDF form into image formats.  In our experience, selecting JPG is the best choice for quality and size.  It seems the
+ output format you choose may effect both resolution and other factors.  Converting to PNG produces smaller lower resolution renderings
+ of the PDFs we tested.  It also doesn't furnish the zip download option (although Brieflet takes care of the individual downloads for you).
+ Choosing GIF actually produces a single animated GIF of the presentation which isn't suitable for Brieflet.  BMP produces high quality but
+ very large files.  JPG seems to be the best choice.  You can also try converting from other formats but results may vary.  For instance, we
+ tried converting a PowerPoint and Zamzar returned images with the pages rotated.  We tried again and converted PowerPoint to PDF and then PDF to
+ JPG and it worked great.  It can be a useful service but certain combinations work better than others.  We also found the service
+ useful for creating a few slides from a portrait-format document -- then added sidebars -- and included it in a presentation.
+ Keep in mind that some of the downloads may be large and that you may want to use a WiFi connection.  Brieflet can handle multiple simultaneous
+ downloads.  Progress will be displayed for each on the notification bar.  This will show the download progress itself and some processing to
+ scale individual images once download is complete.  Brieflet always preserves at least screen resolution for the slides but may downscale (while
+ preserving aspect) images which exceed screen dimensions.  We hope you find our Zamzar&trade; support useful.  It can be a great way to rebrief
+ all or part of presentations shared from conferences (or use Brieflet as a presentation reader).</p>
+ </body>
+</html>

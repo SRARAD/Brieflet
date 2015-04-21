@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2011-2012 SRA International, Inc., All Rights Reserved. -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_edit"
+          android:icon="@drawable/ic_menu_edit"
+          android:title="Rename"
+          android:showAsAction="withText|always" />
+          
+    <item android:id="@+id/menu_delete"
+          android:icon="@drawable/ic_menu_delete"
+          android:title="Delete"
+          android:showAsAction="withText|always" />
+          
+    <item android:id="@+id/menu_send"
+          android:icon="@drawable/ic_menu_send"
+          android:title="Send"
+          android:showAsAction="withText|always" />
+    
+    <item android:id="@+id/menu_details"
+    	  android:showAsAction="withText|always"
+    	  android:icon="@drawable/ic_menu_info_details"
+          android:title="Details" />
+          
+    <item android:id="@+id/menu_transition"
+          android:title="Set Default Transition" />
+          
+    <item android:id="@+id/menu_sidebars"
+          android:title="Add Sidebars" />
+          
+    <item android:id="@+id/menu_duplicate"
+          android:title="Duplicate"/>
+          
+    
+</menu>

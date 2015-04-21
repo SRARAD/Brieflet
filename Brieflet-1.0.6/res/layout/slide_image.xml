@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<!-- Copyright (c) 2011-2012 SRA International, Inc., All Rights Reserved. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content" >
+	<ImageView
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+    	android:id="@+id/myImage"
+    	android:background="@drawable/selector"
+ 	/>
+ 	<TextView
+ 		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+ 		android:gravity="left|bottom"
+ 		android:id="@+id/transition_text"
+ 		android:textStyle="bold"
+ 		android:textSize="16sp"
+ 	/>
+</FrameLayout>

@@ -1,0 +1,13 @@
+<!-- Copyright (c) 2011-2012 SRA International, Inc., All Rights Reserved. -->
+    <resources>
+        <color name="white">#FFFFFF</color>
+        <color name="red">#FF0000</color>
+        <color name="green">#00FF00</color>
+        <color name="blue">#0000FF</color>
+        <color name="yellow">#FFFF00</color>
+        <color name="black">#000000</color>
+        <color name="cyan">#00FFFF</color>
+        <color name="magenta">#FF00FF</color>
+        <color name="brieflet_blue">#0054A1</color>
+        <color name="android_green">#97CC00</color>
+    </resources>

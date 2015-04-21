@@ -1,0 +1,67 @@
+<!-- Copyright (c) 2011-2012 SRA International, Inc., All Rights Reserved. -->
+<html>
+<body>
+<h2>The Slide Grid View</h2>
+<p>The Slide Grid View shows thumbnails of all the slides in the presentation.  The size of the thumbnails
+ can be set in <a href="blt://options.html">Brieflet preferences</a> from Brieflet's home screen.</p>
+<p>To return to a full-screen view of a particular slide in the presentation, tap the thumbnail of that slide.
+ To return to the Brieflet home screen touch the Brieflet icon in the upper left corner.</p>
+<p>To see the transition names for each slide select "Show Transitions" in the Action Bar.</p>
+<p>Slide Grid Edit Mode provides a variety of editing options and actions for slides in Grid View.
+ This mode takes advantage of the Contextual Action Bar, a new feature in the Android&trade; 3.0 Honeycomb release.
+ To activate Edit Mode long press one of the slide thumbnails (just as you would in Presentation List) until a green dialog appears.
+ The Action Bar will now show the available slide operations, each of which is detailed below.
+ All operations are still valid when more than one thumbnail is selected except "Save Template."
+ A drop down label displays the number of items selected. Pressing this label will give you the option
+ to select all elements in the Grid or select none. Note: The Edit Mode will persist even if every item
+ in the grid has been de-selected. This allows you to perform a new operation without having to long press again.
+ To exit the Option Mode simply press "Done" in the upper left corner or the back button.</p>
+
+<p>The following options may be present in Edit Mode (depending on the state of the Brieflet clipboard):</p>
+<img src="blt://ic_menu_view.png" alt="View" align="left"/> <h3>Hide</h3>
+<p>This option "hides" a slide so it will be skipped in the presentation.  This will cause the slide to appear
+ darkened in the grid view to indicate it has been hidden.  You can always view a hidden slide full screen by
+ going to the grid view and tapping it.  But it will be skipped when going either forward or backward through
+ the slides when in the full-screen slide view.  The slide will be marked as hidden in the presentation itself
+ and this will persist until changed. </p>
+<h4>Unhide</h4>
+<p>If a slide is hidden, this will make it visible in the presentation mode again.
+ Note, in the case of multi select: if all the selected slides are hidden, the Unhide option
+ will appear in the Action Bar. If one of the selected slides is visible, Hide will appear instead.</p>
+<img src="blt://ic_menu_cut_holo_dark.png" alt="Cut" align="left"/><h3>Cut</h3>
+<p>This removes the slide from the presentation and puts it on the clipboard so that it may later be pasted
+ somewhere else in the same or a different presentation.</p>
+<img src="blt://ic_menu_copy_dark.png" alt="Copy" align="left"/><h3>Copy</h3>
+<p>This makes a copy of the slide on the clipboard so that it may later be pasted somehwere else in one of the
+ presentations.</p>
+<img src="blt://ic_menu_paste_dark.png" alt="Paste" align="left"/><h3>Paste</h3>
+<h4>Paste Before</h4>
+<p>This option will appear if you have a slide on the clipboard.  It will paste a copy of the current slide
+ on the clipboard before the chosen slide.</p>
+<h4>Paste After</h4>
+<p>This option will appear if you have a slide on the clipboard.  It will paste a copy of the current slide
+ on the clipboard after the chosen slide.</p>
+<img src="blt://ic_menu_delete.png" alt="Delete" align="left"/><h3>Delete</h3>
+<p>This permanently deletes the slide from the presentation.  A dialog will ask you to confirm the deletion.
+ Presentations must contain at least one slide so if you try to delete every slide, a dialog will appear
+and you will be prevented from doing so.</p>
+<h3>Show Transitions</h3>
+<p>Transitions names will appear as blue labels on the top left corner of a slide.</p>
+<h4>Hide Transitions</h4>
+<p>Hide the blue transition labels on the top left corner of a slide.</p>
+<h3>Set Transition</h3>
+<p>This option allows you to set the transition that should occur immediately before the
+ slide. If the "Use Default" option is selected on the dialog, the transition reverts to either the
+ presentation default if set or the application default.</p>
+<h3>Copy Slide Link</h3>
+<p>This copies a link to the slide (a type of Brieflet Action) onto the clipboard so that it may later be pasted in another slide.  When a
+ slide link is pasted it will include a thumbnail of the slide you are linking to.  You can also choose to hide the thumbnail after
+ you've pasted the link.  This provides a mechanism for linking presentations together.  After following a slide link you can always
+ return to the original presentation with the Back key.</p>
+<h3>Save Template</h3>
+<p>Only valid for single selection, this sets the slide as a background template that will be used when automatically 
+creating slides from videos and photos sent to Brieflet.  The background is only used when the Brieflet
+ preference for backgrounds is set to "Custom".</p>
+
+</body>
+</html>

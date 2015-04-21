@@ -1,0 +1,143 @@
+<!-- Copyright (c) 2011-2012 SRA International, Inc., All Rights Reserved. -->
+<html>
+<body>
+<h2>Brieflet&trade; Documentation For Developers</h2>
+<p>We created Brieflet in part so that we could best integrate it into other
+ applications we were developing.  Below you'll find both the file format description
+ as well as ways you can communicate with Brieflet on the Android&trade; platform.</p>
+<h3>Brieflet File Format</h3>
+<h4>Brieflet Uses ZIP Format</h4>
+<p>Brieflet uses ZIP files to store presentations.  We use the BLT rather than the ZIP
+ extension in order to more clearly distinguish Brieflet files from ordinary ZIP files.
+ However, Brieflet will recognize either extension on files located in the Slides directory
+ on your device.  When Brieflet makes a copy of a presentation, it will rewrite the file
+ with the BLT extension.</p>
+<h4>Supported Slide Image Formats</h4>
+<p>When importing slides from other formats, Brieflet represents the slides each as images.
+ Therefore Brieflet ZIP files consist primarily of images.  We recommend PNG format image files and
+ Brieflet will use PNG in writing out new images.  We support JPEG, GIF, and BMP as well.</p>
+<p>Brieflet normally uses a special metadata file to record information about slide order,
+ hidden slides, actions, and other properties of the presentation.  But in order to most
+ flexibly import Presentations as saved from PowerPoint we use certain naming conventions to
+ attempt to detect slide order.  The current approach is as follows:</p>
+<ul>
+<li>Scan the ZIP archive in order for any files with extensions ending in upper or lower PNG, JPEG, GIF, or BMP.</li>
+<li>Skip all files starting with "." (these are the thumbnails on some platforms)</li>
+<li>Look for file names (excluding path) that start with "SlideN." where N is an integer possibly with leading zeroes.</li>
+<li>If some files of that form are found, slide order is the integer order of those files.</li>
+<li>If no files of that form are found, image files are ordered as encountered in the ZIP archive.</li>
+</ul>
+<p>If you are generating the file, it is most efficient if the image files are at the top-level of the archive and don't
+ have a full path specified.</p>
+<h4>Getting Brieflet to Detect a New Presentation</h4>
+<p>Brieflet monitors the Slides directory on your device SDCard for presentation files.  Hitting refresh from the Brieflet
+ Home screen causes it to quickly re-index and display all presentations found in the Slides directory.  If you had an
+ application on the device which generates a report presentation, it could create a zip archive as above, saving it to a file
+ in the Slides directory and that presentation would appear in Brieflet upon the next refresh of the screen.</p>
+<p>You could also generate a converter which emails the Brieflet archive file where it could be received and imported
+ on your device.</p>
+<h4>Brieflet's meta.txt File</h4>
+<p>All metadata about the Presentation is contained in a file called meta.txt which is at the top level of
+ the Brieflet format ZIP file.  If the file is not present, it will be created the first time the Presentation is edited (and
+ slide order will be discovered through the technique mentioned above).  The meta.txt file is a readable ASCII Java property
+ file.  The ordering of the properties in the file is incidental and may change each time a Presentation is edited.  We describe
+ the meaning of individual properties in the file below.  When we introduce new features, we will maintain backward compatibility
+ to earlier property formats.</p>
+<dl>
+<dt><h5>order (required)</h5></dt>
+<dd>This provides a comma-separated list of slide image names in the order in which they should appear in the presentation.  These
+ must be the full names of the slide image as they appear in the archive.  Usually these would not include a path but if originally
+ provided with a full path, the full path is included in each entry here as well.  The paths and file names must not contain commas.</dd>
+<blockquote>Example: order=Slide1.PNG,Slide2.PNG,Slide3.PNG</blockquote>
+<dt><h5>title (required)</h5></dt>
+<dd>This provides the title used for display of the presentation in the presentation list.  It may include a hidden sort prefix
+ ending with "|".</dd>
+<blockquote>Example: title=0|Recent Presentation</blockquote>
+<blockquote>Example: title=My Presentation</blockquote>
+<dt><h5>tags (optional)</h5></dt>
+<dd>This provides a comma-separated list of "tags" which can be used to sub-select which presentations appear in the presentation
+ list.  This is currently utilized when another application calls Brieflet with an intent so that the list of presentations may be
+ customized to a set relevant to the calling application.</dd>
+<blockquote>Example: tags=activityreport</blockquote>
+<dt><h5>lastUpdate (optional, always written by Brieflet on edit)</h5></dt>
+<dd>This gives the timestamp of the last update to the presentation in milliseconds since January 1, 1970</dd>
+<dt><h5>SLIDENAME.actions (optional)</h5></dt>
+<dd>SLIDENAME is the name of a slide image without the "." and extension.  For instance, if your slide image was called "Slide1.PNG",
+ SLIDENAME would be "Slide1".  This property gives a comma separated list of Action handles.  An Action handle can be any string that
+ is unique within the slide that serves to identify further properties of that specific Action on the slide.</dd>
+<blockquote>Example: Slide1.actions=action1,action2,action3</blockquote>
+<dt><h5>SLIDENAME.action.HANDLE (required if HANDLE appears in a SLIDENAME.actions property as above)</h5></dt>
+<dd>Where SLIDENAME is as described above and a HANDLE is one of the items on the actions list for SLIDENAME this property
+ gives a string representation of all parameters of the action that appears on a slide.  The property will begin with an
+ Action type name followed immediately by a delimiter and then followed by a set of delimited fields unique to that form 
+ of action.  Currently valid Action types include: intent, video, and launch.  We will describe each of the formats in detail
+ below.
+<blockquote>Example: Slide10.action.action1=intent|android.intent.action.VIEW|http\://www.sra.com|718|68|898|188|1|.Image-1</blockquote>
+<blockquote>Example: Slide7.action.action2=launch|com.rovio.angrybird|com.rovio.ka3d.App|699|122|771|192|1</blockquote>
+</dl>
+<dt><h5>Video Action Format</h5></dt>
+<blockquote>video|/mnt/sdcard/path/to/video.mp4|left|top|width|height|startmillis|durationmillis|showthumb|loop|autostart</blockquote>
+<dd>Action format strings are used in properties like the one described above.  The video format always starts with the
+ string "video" followed by a delimeter.  Next is a full path to the video on the device.  This is followed by the
+ screen coordinates where the embedded video should show.  These are in screen coordinates (currently using the non-projected
+ 1280x752 area for the Xoom for instance).  Given are the left, top, width, and height of the viewing rectangle.  Next is the
+ number of milliseconds into the video file where playback should begin.  The next parameter provides the duration of the
+ segment to playback from the video (this will be supported in the future, a value of -1 can be put in to indicate playback
+ to the end of the clip).  The parameter showthumb is either 1 indicating that a thumbnail should be displayed when
+ the video is not playing or 0 indicating that it should not.  The loop parameter is 1 indicating the video should loop or
+ 0 indicating that it should play one time.  The autostart parameter is 1 indicating the video should start playing when
+ the slide displays or 0 indicating that it needs to be tapped to start.</dd>
+<dt><h5>Audio Action Format</h5></dt>
+<blockquote>audio|/mnt/sdcard/path/to/audio.mp3|left|top|right|bottom|startmillis|durationmillis|showthumb|loop|autostart</blockquote>
+<dd>The audio format always starts with the string "audio" followed by a delimeter.  The parameters are exactly the same
+ as the "video" format above except that the control area is represented with left, top, right, and bottom coordinates
+ (not the width and height which are specified for video).  Audio can be played simulataneously with video but only the
+ first auto start of video and of audio is honored.  The thumbnail for audio consists of album art for the song if available.
+</dd>
+<dt><h5>Intent Action Format</h5></dt>
+<blockquote>intent|my.intent.action|URI|left|top|right|bottom|showthumb|image name</blockquote>
+<dd>The intent format Action always starts with the string "intent" followed by the delimiter that should be used.  Next is
+ the full ASCII intent action.  For example, this would be something like android.intent.action.VIEW for a typical VIEW action.
+ Next the URI is specified.  This might be the website to send the browser to, for instance.  The next left,top,right, and bottom parameters describe
+ the bounding rectangle for the action in screen coordinates.  The showthumb parameter is 1 if you would like a visible thumbnail
+ or 0 if you do not.  If this parameter is 1, the thumbnail must be furnished as a special image in the Brieflet zip file.  The
+ next parameter gives the name of that image which must be in the form ".Image-N" where N is in an Integer.  An image entry with
+ exactly that name must appear in the ZIP archive and may contain any of the Android supported image formats.  These should be 
+ thumbnails as full-sized images would currently result in unplanned memory allocations.</dd>
+<dt><h5>Launch Action Format</h5></dt>
+<blockquote>launch|application.package|application.class|left|top|right|bottom|showthumb</blockquote>
+<dd>The launch format Action always starts with the string "launch" followed by the delimiter that you want to use.  Launch is
+ also an intent but specified by package and class name rather than by intent action and URI.  The next parameter is the package
+ name of the application you would like to launch followed by the fully qualified class name of the application.  Next are the
+ left, top, right, and bottom parameters in screen coordinates of the bounding rectangle.  If showthumb is 1, the application icon
+ is displayed, if it is 0 it will be hidden.</dd>
+<h3>Sending Media to Brieflet From Other Applications</h3>
+<p>Brieflet responds to a number of intent actions from other applications.  These include:</p>
+<h4>android.intent.action.VIEW</h4>
+<p>Here the Brieflet activity will respond to VIEW's of items whose path ends in ".blt".  For instance, this occurs
+ when a Brieflet file is received as a GMAIL attachment.</p>
+<h4>android.intent.action.SEND</h4>
+<p>Brieflet will also respond to several types of data for the SEND action.  This is typically invoked from applications
+ when the user chooses to Share the content.  In particular, the following mime types are supported:</p>
+<dl>
+<dt>image/*</dt>
+<dd>Images are overlayed on the user's chosen default background in Brieflet and appended to the "*Received Media*" Presentation.</dd>
+<dt>video/*</dt>
+<dd>Videos are overlayed as Actions on the user's chosen default background in Brieflet at the chosen default resolution and appended to the "*Received Media*" Presentation.</dd>
+<dt>audio/*</dt>
+<dd>Shared audio tracks are placed on the Brieflet clipboard (if successful a dialog will notify you in Brieflet).  These can then
+ be pasted as Actions onto slides.  Brieflet will attempt to build a thumbnail from matching album art from the media store on
+ your device.</dd>
+<dt>text/plain</dt>
+<dd>The text/plain mime type is used by many applications like the Browser, YouTube, and so forth.  Brieflet puts a VIEW intent for these on the
+ clipboard, allowing the user to paste them into an appropriate slide.  Brieflet also looks for a share_screenshot bitmap if present
+ and will include this as a potential thumbnail.  The browser does produce these bitmaps but other applications may not.  Many different
+ applications share content through text/plain and Brieflet may not be able to act on all of them.  Brieflet will parse that content to look for particular kinds of links and content
+ it can handle.</dd>
+</dl>
+<h3>Invoking Brieflet Through Intents</h3>
+<p>You can, of course, invoke Brieflet through any other application just as the launcher does.  We are working on having
+ several entry points, however, that give you more granular control over which elements of Brieflet you invoke and on what.
+ We will document these options when they become available.</p>
+</body>
+</html>

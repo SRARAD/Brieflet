@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2011-2012 SRA International, Inc., All Rights Reserved. -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	
+	<item android:title="Add" android:id="@+id/Add" android:icon="@drawable/ic_menu_add" android:showAsAction="always"></item>
+	<item android:title="Refresh" android:id="@+id/Refresh" android:icon="@drawable/ic_menu_refresh" android:showAsAction="always"></item>
+	
+	<item android:id="@+id/Preferences" android:icon="@drawable/ic_menu_preferences" android:showAsAction="always">
+	</item>
+	<item android:id="@+id/PPTConvert" android:title="Get Windows PowerPoint Converter">
+		<menu>
+			<item android:title="Send Windows PowerPoint Converter" android:id="@+id/EmailPPTConvert" android:icon="@drawable/ic_menu_send"></item>
+			<item android:title="Export Windows PowerPoint Converter to SDCard" android:id="@+id/ExportPPTConvert"></item>
+		</menu>
+	</item>
+	<item android:title="Pack Presentations" android:id="@+id/Pack"></item>
+	<item android:title="Feedback" android:id="@+id/Feedback"></item><item android:id="@+id/About" android:title="About"></item>
+	<!--<item android:id="@+id/toggleTheme" android:title="Day/Night" android:showAsAction="never" /> -->
+	<item android:title="Exit (Force Quit)" android:id="@+id/Exit"></item>
+	
+	
+	
+</menu>
